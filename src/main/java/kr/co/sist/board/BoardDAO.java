@@ -96,7 +96,7 @@ public class BoardDAO {
 		SqlSession ss = MyBatisHandler.getInstance().getMyBatisHandler(true);		
 		int cnt = ss.insert("kr.co.sist.board.insertBoard", bDTO);				
 		ss.close();		
-		
+				
 	}//insert board
 	
 	
