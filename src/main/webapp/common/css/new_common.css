@@ -1,0 +1,293 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-jp-dynamic-subset.min.css");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-std-dynamic-subset.min.css");
+
+input{
+    font-family: "Pretendard", sans-serif;
+}
+
+.foreignlang.en body,
+.foreignlang.en input,
+.foreignlang.en button{
+    font-family: "Pretendard STD", sans-serif !important;
+}
+.foreignlang.ja body,
+.foreignlang.ja input,
+.foreignlang.ja button{
+    font-family: "Pretendard JP", sans-serif !important;
+}
+.foreignlang.zh-TW body,
+.foreignlang.zh-TW input,
+.foreignlang.zh-TW button{
+    font-family: "Noto Sans TC", sans-serif !important;
+}
+.foreignlang.zh-CN body,
+.foreignlang.zh-CN input,
+.foreignlang.zh-CN button{
+    font-family: "Noto Sans SC", sans-serif !important;
+}
+
+.foreignlang.en #header #gnb{
+    width:650px;
+}
+.foreignlang.ja #header #gnb{
+    width:594px;
+}
+.foreignlang.zh-TW #header #gnb > li > a, 
+.foreignlang.zh-TW #header #gnb > li .openDiv .inner .leftArea .twoD li > a{
+    font-family: "Noto Sans TC", sans-serif;
+}
+.foreignlang.zh-TW #header #gnb > li .openDiv .inner .leftArea .twoD li{
+    width:94px;
+}
+.foreignlang.ja #header #gnb > li .openDiv .inner .leftArea .twoD li,
+.foreignlang.zh-CN #header #gnb > li .openDiv .inner .leftArea .twoD li{
+    width:102px;
+}
+#util .containers .right > div.links{
+    float: none;
+}
+.california #header #gnb{
+    width:470px;
+}
+#header #gnb{
+    width:470px;
+}
+#header #gnb > li > a{
+    font-size:20px;
+}
+.translated-ltr #header #gnb{
+    width:546px;
+}
+.translated-ltr #header #gnb > li > a{
+    font-size:18px;
+}
+.translated-ltr .california #header #gnb{
+    width:360px;
+}
+.lang > a{
+    font-family: inherit;
+}
+.lang > ul li a.eng,
+.lang > ul li a.jpn,
+.lang > ul li a.chs,
+.lang > ul li a.cht,
+.lang > ul li a.kor{
+    background:none;
+}
+.lang > ul li a{
+    padding-right: 0;
+    white-space: nowrap;
+}
+#header #gnb > li.on > a:after{
+    content:''; 
+    width:100%; 
+    height:4px; 
+    border-radius: 50px; 
+    position:absolute; 
+    bottom:-12px; 
+    left:0; 
+    margin-left:0; 
+    background:#f85549; 
+    z-index: 99999;
+}
+.california #header #gnb > li.on > a:after{
+    background:#4c6ef5;
+}
+.california .member_type .member{
+    float:none
+}
+#header #gnb > li .openDiv .inner .leftArea .twoD li{
+    width:88px;
+    border-bottom: none;
+}
+#header #gnb > li .openDiv .inner .leftArea .twoD li > a{
+    font-size:16px;
+}
+#util .containers #hd_sch .search-box{
+    width:12px;
+    padding:0 8px;
+    position:initial
+}
+#util .containers #hd_sch .search-box+label .search-icon{
+    top:-3px;
+    left: -27px;
+}
+#util .containers #hd_sch .search-box+label .search-icon img{
+    width:18px;
+}
+#util fieldset{
+    position: relative;
+}
+#util fieldset label{
+    position:absolute;
+    top:-2px;
+    right:9px;
+}
+#util .containers #hd_sch .search-icon{
+    position:initial
+}
+#util .containers .right .links a.snow{
+    padding-left: 30px;
+    background: url(/images/gjw_2024/common/logo_snow.png) no-repeat 0 50%;
+}
+#googleTranslateElementInit{
+    margin-left:8px;
+}
+#header .right p.btn_line a{
+    font-weight:500;
+    border:1px solid #e9ecef
+}
+.today_i h2 span{
+    font-size:14px;
+    font-weight: normal;
+    margin-left:4px;
+    vertical-align: middle;
+}
+ul.list-group-flush a{
+    display: block;
+}
+.lang{
+    margin-top:3px;
+    margin-left: 16px;
+}
+.lang_mo{
+    margin-top:24px;
+    text-align:center;
+}
+.lang_mo li{
+    display: inline-block;
+    margin-left:12px;
+    padding-left:12px;
+    position:relative;
+}
+.lang_mo li:before{
+    content:'';
+    width:1px;
+    height:11px;
+    background:#adb5bd;
+    position:absolute;
+    top:4px;
+    left:0;
+}
+.lang_mo li:first-child{
+    margin-left:0;
+    padding-left:0;
+}
+.lang_mo li:first-child:before{
+    display: none;
+}
+.lang_mo a{
+    color:#adb5bd;
+}
+.lang_mo .on a{
+    color:#212529;
+}
+.lang_mo .on{
+    display: none;
+}
+
+.util_login ul{
+    display:flex;
+    gap:12px;
+}
+.util_login li{
+    padding-left:12px;
+    position: relative;
+}
+.util_login li:first-child{
+    padding-left: 0;
+}
+.util_login li:before{
+    content:'';
+    width:1px;
+    height:10px;
+    background:#adb5bd;
+    position:absolute;
+    top:50%;
+    left:0;
+    transform:translateY(-50%);
+}
+.util_login li:first-child:before{
+    display: none;
+}
+
+.util_login{
+    margin-top:3px;
+}
+.util_login_m{
+    margin-bottom: 16px;
+}
+
+.util_login_m ul{
+    gap:6px;
+}
+.util_login_m a{
+    padding:8px 12px;
+    color: #f85549;
+    background:#fff5f5;
+    border-radius: 50px;
+}
+.util_login_m li{
+    padding:0;
+}
+.util_login_m li:before{
+    display:none;
+}
+
+@media only screen and (max-width:1440px){
+
+
+
+
+
+
+
+}
+@media only screen and (max-width:1320px){
+
+
+
+
+
+}
+@media only screen and (max-width:1280px){
+
+
+
+
+
+}
+@media only screen and (max-width:1152px){
+
+
+}
+
+@media only screen and (max-width:1024px){
+
+
+}
+@media only screen and (max-width:960px){
+
+
+
+
+}
+@media only screen and (max-width:768px){
+
+
+
+}
+
+@media only screen and (max-width:500px){
+
+
+
+}
+
+
+
+
