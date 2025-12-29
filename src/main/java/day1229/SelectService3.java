@@ -6,7 +6,6 @@ import org.apache.ibatis.exceptions.PersistenceException;
 
 import day1226.CarModelDomain;
 import day1226.EmpAllDomain;
-import day1226.EmpDomain;
 
 public class SelectService3 {
 
@@ -37,6 +36,21 @@ public class SelectService3 {
 		
 		try {
 			list = SelectDAO3.getInstance().dollar(tableName);
+		}catch(PersistenceException pe) {
+			pe.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	public List<EmpAllDomain> dynamicIf(int deptno){
+		List<EmpAllDomain> list = null;
+		if(!(deptno == 10 || deptno == 20 || deptno == 30 || deptno == 40)) {
+			deptno=0;
+		}
+		
+		try {
+			list = SelectDAO3.getInstance().dynamicIf(deptno);
 		}catch(PersistenceException pe) {
 			pe.printStackTrace();
 		}

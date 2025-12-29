@@ -49,6 +49,19 @@ public class SelectDAO3 {
 	}
 	
 	
+	public List<EmpAllDomain> dynamicIf(int deptno) throws PersistenceException{
+		List<EmpAllDomain> list = new ArrayList<EmpAllDomain>();
+		
+		SqlSession ss = MyBatisHandler.getInstance().getMyBatisHandler(true);
+		list = ss.selectList("day1229.if", deptno);
+		if(ss!=null) {
+			ss.close();
+		}
+		
+		return list;
+	}
+	
+	
 	
 	
 }

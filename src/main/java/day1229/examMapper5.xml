@@ -23,11 +23,32 @@
 	from ${tableName}
 	
 	</select>	
-	<!-- dynamic query : if -->
+	<!-- dynamic query : if 
+	부서 번호가 0이 아니면 해당 부서를 조회하고 그렇지 않으면 모든 사원정보를 조회
+	-->
+	<select id="if" parameterType="int" resultType="eaDomain">
+	select empno,ename,job,sal,hiredate,deptno
+	from emp
+	<where>
+	<if test="deptno neq 0">
+		deptno = #{deptno}
+	</if>
+	</where>	
+	</select>
+	
+	
 	<!-- dynamic query : choose -->
+	
 	<!-- dynamic query : forEach -->
+	
 	<!-- dynamic query : set -->
+	
 	<!-- PL/SQL insert, update, delete, cursor -->
+	
+	
+	
+	
+	
 </mapper>
 
 
