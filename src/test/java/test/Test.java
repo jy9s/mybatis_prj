@@ -51,7 +51,8 @@ public class Test {
 		//assertNotNull(cDAO.selectCarMaker("수입"));
 //		CarService cs = CarService.getInstance();
 //		System.out.println(cs.searchModel("현대"));
-			assertNotNull(sDAO.subQueryNjoin());
+//			assertNotNull(sDAO.subQueryNjoin());
+			assertNotNull(sDAO.dollar("cp_emp5"));
 			
 			
 		}catch(Exception e) {

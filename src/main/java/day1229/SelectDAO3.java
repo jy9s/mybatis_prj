@@ -36,11 +36,11 @@ public class SelectDAO3 {
 	}
 	
 	
-	public List<EmpAllDomain> union() throws PersistenceException{
+	public List<EmpAllDomain> dollar(String tableName) throws PersistenceException{
 		List<EmpAllDomain> list = new ArrayList<EmpAllDomain>();
 		
 		SqlSession ss = MyBatisHandler.getInstance().getMyBatisHandler(true);
-		list = ss.selectList("day1228.dollar");
+		list = ss.selectList("day1229.dollar", tableName);
 		if(ss!=null) {
 			ss.close();
 		}

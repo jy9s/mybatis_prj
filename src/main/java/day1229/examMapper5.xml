@@ -15,14 +15,14 @@
 		where (cm.maker=cc.maker and cmo.model=cm.model) and (cc.country='국산'))
 		where rnum between 1 and 10
 	</select>
+	<!-- $의 사용 
+	테이블 명을 입력받아 검색
+	-->
+	<select id="dollar" parameterType="String" resultType="eaDomain">
+	select empno,ename,job,sal,hiredate,deptno
+	from ${tableName}
 	
-	<select id="dollar">
-	</select>
-	
-	
-	<!-- $의 사용 -->
-	
-	
+	</select>	
 	<!-- dynamic query : if -->
 	<!-- dynamic query : choose -->
 	<!-- dynamic query : forEach -->

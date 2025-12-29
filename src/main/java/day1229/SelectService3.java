@@ -5,6 +5,8 @@ import java.util.List;
 import org.apache.ibatis.exceptions.PersistenceException;
 
 import day1226.CarModelDomain;
+import day1226.EmpAllDomain;
+import day1226.EmpDomain;
 
 public class SelectService3 {
 
@@ -23,6 +25,18 @@ public class SelectService3 {
 		
 		try {
 			list = SelectDAO3.getInstance().subQueryNjoin();
+		}catch(PersistenceException pe) {
+			pe.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	public List<EmpAllDomain> dollar(String tableName){
+		List<EmpAllDomain> list = null;
+		
+		try {
+			list = SelectDAO3.getInstance().dollar(tableName);
 		}catch(PersistenceException pe) {
 			pe.printStackTrace();
 		}
