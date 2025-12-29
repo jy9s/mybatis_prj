@@ -59,6 +59,18 @@ public class CarDAO {
 		return list;
 	}
 	
+	public List<ViewDomain> selectCar(String model) throws PersistenceException{
+		List<ViewDomain> list = new ArrayList<ViewDomain>();
+		
+		SqlSession ss = MyBatisHandler.getInstance().getMyBatisHandler(true);
+		list = ss.selectList("kr.co.sist.car.carView2",model);
+		if(ss!=null) {
+			ss.close();
+		}
+		
+		return list;
+	}
+	
 	
 	
 }

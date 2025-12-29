@@ -34,6 +34,7 @@
     <mapper resource="day1224/examMapper2.xml"/> <!-- update 연습, delete 연습 -->
     <mapper resource="day1224/examMapper3.xml"/> <!-- select 연습 -->
     <mapper resource="day1226/examMapper4.xml"/> <!-- select 연습 -->
+    <mapper resource="day1229/examMapper5.xml"/> <!-- select 연습 -->
     <mapper resource="kr/co/sist/car/carMapper.xml"/> <!-- select 연습 -->
     
     

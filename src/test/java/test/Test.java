@@ -4,9 +4,10 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.jupiter.api.DisplayName;
 
-import day1226.EmpDomain;
 import day1226.SelectDAO2;
+import day1229.SelectDAO3;
 import kr.co.sist.car.CarDAO;
+import kr.co.sist.car.CarService;
 
 public class Test {
 
@@ -29,8 +30,8 @@ public class Test {
 //		eDTO.setDeptno(30);
 		//System.out.println(eDTO);
 		
-		SelectDAO2 sDAO = SelectDAO2.getInstance();
-		CarDAO cDAO = CarDAO.getInstance();
+//		SelectDAO2 sDAO = SelectDAO2.getInstance();
+//		CarDAO cDAO = CarDAO.getInstance();
 //		try {
 //		EmpDomain ed=sDAO.useDomain(eDTO);
 //		assertNotNull(ed);
@@ -42,11 +43,15 @@ public class Test {
 //		}catch(Exception e ){
 //			e.printStackTrace();
 //		} 
+		SelectDAO3 sDAO = SelectDAO3.getInstance();
 		try {
 		//assertNotNull(sDAO.greaterThan(2000));
 		//assertNotNull(sDAO.subquery());
 		//assertNotNull(sDAO.join());
-		assertNotNull(cDAO.selectCarMaker("수입"));
+		//assertNotNull(cDAO.selectCarMaker("수입"));
+//		CarService cs = CarService.getInstance();
+//		System.out.println(cs.searchModel("현대"));
+			assertNotNull(sDAO.subQueryNjoin());
 			
 			
 		}catch(Exception e) {

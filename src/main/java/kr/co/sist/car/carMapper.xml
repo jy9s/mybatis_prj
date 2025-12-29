@@ -21,7 +21,7 @@
 	<select id="carModel" parameterType="String" resultType="String">
 		SELECT model
 		from car_maker
-		WHERE Maker=#{type}
+		WHERE Maker=#{ maker }
 	</select>
 	
 	
@@ -31,6 +31,13 @@
 	from car_maker cma, car_model cmo	
 	where cmo.model = #{carModel} and cma.maker=#{carMaker}
 	order by cmo.input_date desc
+	</select>
+	
+	<select id="carView2" parameterType="String" resultType="viewDomain">
+	select model, car_year, price, cc, car_img, input_date
+	from car_model	
+	where model = #{carModel}
+	order by input_date desc
 	</select>
 	
 </mapper>
