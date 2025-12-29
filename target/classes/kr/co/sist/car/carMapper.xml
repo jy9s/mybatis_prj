@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.car">
+
+	<select id="carMaker" parameterType="String" resultType="String">
+		SELECT * FROM (
+		    SELECT DISTINCT maker,
+		           CASE
+		               WHEN maker IN ('현대', '기아', '삼성', '쌍용') THEN '국산'
+		               WHEN maker IN ('BENZ', 'BMW', 'AUDI') THEN '수입'
+		           END AS type 
+		    FROM car_maker
+		)
+		WHERE type = #{type}
+	</select>
+	
+	
+	
+	<select id="carModel" parameterType="String" resultType="String">
+		SELECT model
+		from car_maker
+		WHERE Maker=#{ maker }
+	</select>
+	
+	
+	
+	<select id="carView" parameterType="carDTO" resultType="viewDomain">
+	select cma.maker, cmo.model, cmo.car_year, cmo.price, cmo.cc, cmo.car_img, cmo.input_date
+	from car_maker cma, car_model cmo	
+	where cmo.model = #{carModel} and cma.maker=#{carMaker}
+	order by cmo.input_date desc
+	</select>
+	
+	<select id="carView2" parameterType="String" resultType="viewDomain">
+	select model, car_year, price, cc, car_img, input_date
+	from car_model	
+	where model = #{carModel}
+	order by input_date desc
+	</select>
+	
+</mapper>
+
+
+
