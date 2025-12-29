@@ -18,6 +18,7 @@
 $(function(){
 	$("#btn").click(function(){
 		$("#frm").submit();
+		  
 	})
 	
 	$("[value='${param.type}']").prop("checked",true);
