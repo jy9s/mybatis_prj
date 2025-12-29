@@ -1,5 +1,5 @@
 <%--page directive --%>
-<%@page import="kr.co.sist.board.BoardDTO"%>
+<%@page import="kr.co.sist.board.BoardDomain"%>
 <%@page import="kr.co.sist.board.BoardService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -15,22 +15,21 @@ if(num!=null){ //입력된 번호가 있다면
 		//새로고침 조회수 증가 막기
 		Object obj = session.getAttribute(String.valueOf(tempNum));
 		if(obj==null){
-			bs.modifyBoardCnt(tempNum);
+	bs.modifyBoardCnt(tempNum);
 		}
 		session.setAttribute(String.valueOf(tempNum), true);
 /* 		if(!session.getAttribute("num").equals(num)){
-			session.setAttribute("num", num);
-			bs.modifyBoardCnt(tempNum);
+	session.setAttribute("num", num);
+	bs.modifyBoardCnt(tempNum);
 		}
  */		
-		BoardDTO bDTO = bs.searchOneBoard(tempNum); // 게시글 하나 읽기
+		BoardDomain bDTO = bs.searchOneBoard(tempNum); // 게시글 하나 읽기
 		pageContext.setAttribute("bDTO", bDTO);
 		
 		
 	}catch(NumberFormatException nfe){
 	}
 }
-
 %>
 
 <!DOCTYPE html>

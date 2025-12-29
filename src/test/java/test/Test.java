@@ -4,10 +4,8 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.jupiter.api.DisplayName;
 
-import day1226.SelectDAO2;
-import day1229.SelectDAO3;
-import kr.co.sist.car.CarDAO;
-import kr.co.sist.car.CarService;
+import kr.co.sist.board.BoardDAO;
+import kr.co.sist.board.RangeDTO;
 
 public class Test {
 
@@ -43,8 +41,19 @@ public class Test {
 //		}catch(Exception e ){
 //			e.printStackTrace();
 //		} 
-		SelectDAO3 sDAO = SelectDAO3.getInstance();
+		//SelectDAO3 sDAO = SelectDAO3.getInstance();
+		
+		BoardDAO bDAO = BoardDAO.getInstance();
 		try {
+//			assertNotNull(bDAO.selectBoardTotalCnt(new RangeDTO()));
+			RangeDTO rDTO = new RangeDTO();
+//			rDTO.setField("1");
+//			rDTO.setKeyword("오늘은");
+			
+			
+			
+			assertNotNull(bDAO.selectBoardTotalCnt(rDTO));
+			
 		//assertNotNull(sDAO.greaterThan(2000));
 		//assertNotNull(sDAO.subquery());
 		//assertNotNull(sDAO.join());
@@ -53,7 +62,7 @@ public class Test {
 //		System.out.println(cs.searchModel("현대"));
 //			assertNotNull(sDAO.subQueryNjoin());
 			//assertNotNull(sDAO.dollar("cp_emp5"));
-			assertNotNull(sDAO.dynamicIf(0));
+			//assertNotNull(sDAO.dynamicIf(0));
 			
 		}catch(Exception e) {
 			e.printStackTrace();

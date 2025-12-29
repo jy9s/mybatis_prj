@@ -25,13 +25,15 @@ public class BoardService {
 	 * 제목 20자로 생략하기
 	 * @param list
 	 */
-	public void titleSubStr(List<BoardDTO> boardList) {
+	public void titleSubStr(List<BoardDomain> boardList) {
 		String title="";
-		for(BoardDTO bDTO : boardList){
-			title = bDTO.getTitle();
-			if(title.length()>19){
-				bDTO.setTitle(title.substring(0,20)+"...");
-			}//end if
+		for(BoardDomain bDTO : boardList){
+			if(bDTO.getTitle()!=null) {
+				title = bDTO.getTitle();
+				if(title.length()>19){
+					bDTO.setTitle(title.substring(0,20)+"...");
+				}//end if
+			}
 		}//end for
 	}
 	
@@ -95,7 +97,7 @@ public class BoardService {
 		return startNum + pageScale -1;
 	}
 	
-	public boolean addBoard(BoardDTO bDTO) {
+	public boolean addBoard(BoardDomain bDTO) {
 		boolean flag = false;
 		
 		BoardDAO bDAO = BoardDAO.getInstance();
@@ -114,8 +116,8 @@ public class BoardService {
 	 * @param rDTO
 	 * @return
 	 */
-	public List<BoardDTO> searchBoardList(RangeDTO rDTO){
-		List<BoardDTO> list = null;
+	public List<BoardDomain> searchBoardList(RangeDTO rDTO){
+		List<BoardDomain> list = null;
 		BoardDAO bDAO = BoardDAO.getInstance();
 		try {
 			list = bDAO.selectRangeBoard(rDTO);
@@ -133,8 +135,8 @@ public class BoardService {
 	 * @param num
 	 * @return
 	 */
-	public BoardDTO searchOneBoard(int num) {
-		BoardDTO bDTO = null;
+	public BoardDomain searchOneBoard(int num) {
+		BoardDomain bDTO = null;
 		BoardDAO bDAO = BoardDAO.getInstance();
 		
 		try {
@@ -243,7 +245,7 @@ public class BoardService {
 	}//pagination
 	
 	
-	public boolean modifyBoard(BoardDTO bDTO) {
+	public boolean modifyBoard(BoardDomain bDTO) {
 		boolean flag=false;
 		
 		BoardDAO bDAO = BoardDAO.getInstance();
@@ -256,7 +258,7 @@ public class BoardService {
 	}
 	
 	
-	public boolean removeBoard(BoardDTO bDTO) {
+	public boolean removeBoard(BoardDomain bDTO) {
 		boolean flag=false;
 		
 		BoardDAO bDAO = BoardDAO.getInstance();
