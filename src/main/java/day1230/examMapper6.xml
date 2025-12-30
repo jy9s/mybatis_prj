@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="day1230">	
+	<!-- dynamic query : choose 
+	사원 테이블에서 입력값에 대한 사원번호, 사원명, 직무, 연봉, 입사일, 부서번호 검색
+	입력값이 1이라면 10번 부서 사원 검색
+	입력값이 2이라면 20번 부서 사원 검색
+	그렇지 않다면 30번 부서 사원 검색
+	-->
+	
+	<select id="dynamicChoose" parameterType="int" resultType="eaDomain">
+		select empno,ename,job,sal,hiredate,deptno
+		from emp
+		where
+		<choose>
+			<when test="deptno eq 1">
+			deptno=10
+			</when>
+			<when test="deptno eq 2">
+			deptno=20
+			</when>
+			<otherwise>
+			deptno=30
+			</otherwise>		
+		</choose>
+	</select>
+	
+	<select id="selectAllEmpno" resultType="int">
+	select empno
+	from emp
+	</select>
+	<!-- dynamic query : forEach 
+	배열로 입력되는 모든 사원번호에 해당하는 사원들을 검색
+	-->
+	
+	<select id="dynamicForEach" parameterType="hashMap" resultType="eaDomain">
+		select empno,ename,job,sal,hiredate,deptno
+		from emp
+		where empno in
+			<foreach collection="empnoArr" open="(" item="empno" separator="," close=")">			
+				#{empno}
+			</foreach>		
+	</select>
+	
+	
+	
+	<!-- dynamic query : set -->
+	<select id="dynamicSet" parameterType="">
+	update
+	<set>
+		
+		<if test=""></if>
+		<if test=""></if>
+	</set>
+	from
+	</select>
+	<!-- PL/SQL insert, update, delete, cursor -->
+</mapper>
+
+
+

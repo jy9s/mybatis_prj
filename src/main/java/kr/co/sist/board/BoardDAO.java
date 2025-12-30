@@ -48,7 +48,7 @@ public class BoardDAO {
 		
 	}
 	
-	public void insertBoard(BoardDomain bDTO) throws PersistenceException {
+	public void insertBoard(BoardDTO bDTO) throws PersistenceException {
 		
 		SqlSession ss = MyBatisHandler.getInstance().getMyBatisHandler(true);		
 		int cnt = ss.insert("kr.co.sist.board.insertBoard", bDTO);				
@@ -76,19 +76,21 @@ public class BoardDAO {
 	}
 	
 	
-	public int updateBoard(BoardDomain bDTO) throws SQLException {
+	public int updateBoard(BoardDTO bDTO) throws SQLException {
 		int cnt = 0;
 		SqlSession ss = MyBatisHandler.getInstance().getMyBatisHandler(true);	
-		cnt = ss.update("kr.co.sist.board.updateBoardCnt", bDTO);
+		cnt = ss.update("kr.co.sist.board.updateBoard", bDTO);
+		if(ss!=null) {ss.close();}
 		return cnt;
 	}//update board
 	
-	public int deleteBoard(BoardDomain bDTO) throws SQLException {
+	public int deleteBoard(BoardDTO bDTO) throws SQLException {
 		int cnt = 0;
 		
 		SqlSession ss= MyBatisHandler.getInstance().getMyBatisHandler(true);
 		cnt = ss.delete("kr.co.sist.board.deleteBoard", bDTO);
 
+		if(ss!=null) {ss.close();}
 		return cnt;
 	}//delete board
 	

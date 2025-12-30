@@ -1,4 +1,5 @@
 <%--page directive --%>
+<%@page import="org.apache.catalina.Session"%>
 <%@page import="kr.co.sist.board.BoardService"%>
 <%@page import="kr.co.sist.board.BoardDomain"%>
 <%@page import="java.util.List"%>
@@ -133,6 +134,7 @@ function checkLogin(){
 					<jsp:useBean id="rDTO" class="kr.co.sist.board.RangeDTO" scope="page"/>
 					<jsp:setProperty property="*" name="rDTO"/>
 					<%
+					
 					BoardService bs = BoardService.getInstance();
 								//1. 총 게시글의 수
 								int totalCount = bs.totalCnt(rDTO);
@@ -182,6 +184,7 @@ function checkLogin(){
 								
 								String pagination=bs.pagination(rDTO);
 								
+								session.setAttribute("userId", "kim");
 								pageContext.setAttribute("totalCount", totalCount);
 								pageContext.setAttribute("pageScale", pageScale);
 								pageContext.setAttribute("totalPage", totalPage);
@@ -215,6 +218,7 @@ function checkLogin(){
 					</tr>
 					</thead>
 					<tbody>
+					
 					<c:if test="${ empty boardList}">
 					<tr>
 					<td colspan="6" style="text-align:center">작성된 게시글이 없습니다.</td>

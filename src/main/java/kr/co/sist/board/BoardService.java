@@ -97,7 +97,7 @@ public class BoardService {
 		return startNum + pageScale -1;
 	}
 	
-	public boolean addBoard(BoardDomain bDTO) {
+	public boolean addBoard(BoardDTO bDTO) {
 		boolean flag = false;
 		
 		BoardDAO bDAO = BoardDAO.getInstance();
@@ -245,7 +245,7 @@ public class BoardService {
 	}//pagination
 	
 	
-	public boolean modifyBoard(BoardDomain bDTO) {
+	public boolean modifyBoard(BoardDTO bDTO) {
 		boolean flag=false;
 		
 		BoardDAO bDAO = BoardDAO.getInstance();
@@ -258,7 +258,7 @@ public class BoardService {
 	}
 	
 	
-	public boolean removeBoard(BoardDomain bDTO) {
+	public boolean removeBoard(BoardDTO bDTO) {
 		boolean flag=false;
 		
 		BoardDAO bDAO = BoardDAO.getInstance();

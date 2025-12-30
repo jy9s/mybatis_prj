@@ -2,8 +2,12 @@ package test;
 
 import static org.junit.Assert.assertNotNull;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.jupiter.api.DisplayName;
 
+import day1230.SelectDAO4;
 import kr.co.sist.board.BoardDAO;
 import kr.co.sist.board.RangeDTO;
 
@@ -43,17 +47,25 @@ public class Test {
 //		} 
 		//SelectDAO3 sDAO = SelectDAO3.getInstance();
 		
-		BoardDAO bDAO = BoardDAO.getInstance();
+		//BoardDAO bDAO = BoardDAO.getInstance();
+		
+		SelectDAO4 sDAO = SelectDAO4.getInstance();
 		try {
 //			assertNotNull(bDAO.selectBoardTotalCnt(new RangeDTO()));
-			RangeDTO rDTO = new RangeDTO();
+			//RangeDTO rDTO = new RangeDTO();
 //			rDTO.setField("1");
 //			rDTO.setKeyword("오늘은");
 			
 			
 			
-			assertNotNull(bDAO.selectBoardTotalCnt(rDTO));
+//			assertNotNull(sDAO.dynamicChoose(3));
+			int[] empno= {7521,7566,7564,7698};
+			Map<String,Object> map = new HashMap<String, Object>();
+			map.put("empnoArr", empno);
 			
+			assertNotNull(sDAO.dynamicForEach(map));
+			
+//			assertNotNull(bDAO.selectBoardTotalCnt(rDTO));
 		//assertNotNull(sDAO.greaterThan(2000));
 		//assertNotNull(sDAO.subquery());
 		//assertNotNull(sDAO.join());
