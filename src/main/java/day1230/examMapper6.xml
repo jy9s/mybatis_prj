@@ -47,15 +47,56 @@
 	
 	
 	<!-- dynamic query : set -->
-	<select id="dynamicSet" parameterType="">
-	update
+	<select id="dynamicSet" parameterType="eDTO">
+	update emp
 	<set>
-		
-		<if test=""></if>
-		<if test=""></if>
+			
+		<if test="ename neq null and ename neq ''">
+		ename = #{ename}, 
+		</if>		
+		<if test="job neq null and job neq ''">
+		job = #{job}, 
+		</if>		
+		<if test="sal neq 0">
+		sal = #{sal}, 
+		</if>		
+		<if test="mgr neq 0">
+		mgr = #{mgr}, 
+		</if>		
+		<if test="deptno neq 0">
+		deptno = #{deptno}, 
+		</if>	
+			
+		<if test="strHiredate neq null and strHiredate neq ''">
+		hiredate = #{strHiredate}, 
+		</if>
+			
 	</set>
-	from
+	where empno=#{empno}
 	</select>
+	
+	<!-- transaction -->
+	<insert id="trans1" parameterType="transactionDTO">
+	insert into test_transaction (name, address) values (#{name}, #{address})
+	</insert>
+	
+	<insert id="trans2" parameterType="transactionDTO">
+	insert into test_transaction2 (name, address) values (#{name}, #{address})	
+	</insert>
+	
+	<update id="upTrans1" parameterType="transactionDTO">
+	update test_transaction
+	set address=#{address}
+	where name=#{name}
+	</update>
+	
+	<update id="upTrans2" parameterType="transactionDTO">
+	update test_transaction2
+	set address=#{address}
+	where name=#{name}
+	</update>
+	
+	
 	<!-- PL/SQL insert, update, delete, cursor -->
 </mapper>
 

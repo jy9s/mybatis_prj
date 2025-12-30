@@ -2,14 +2,11 @@ package test;
 
 import static org.junit.Assert.assertNotNull;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.junit.jupiter.api.DisplayName;
 
+import day1224.EmpDTO;
 import day1230.SelectDAO4;
-import kr.co.sist.board.BoardDAO;
-import kr.co.sist.board.RangeDTO;
+import day1230.TransactionDTO;
 
 public class Test {
 
@@ -56,14 +53,28 @@ public class Test {
 //			rDTO.setField("1");
 //			rDTO.setKeyword("오늘은");
 			
+//			EmpDTO e = new EmpDTO();
+//			e.setEmpno(7521);
+//			e.setEname("ward");
+//			e.setSal(1300);
+//			e.setJob("영업");
+			
+			TransactionDTO tDTO = new TransactionDTO();
+			//tDTO.setName("박제이");
+			//tDTO.setAddress("서울시 동작구 상도동");
+			tDTO.setName("민병");
+			tDTO.setAddress("서울시 동");
+			
+			assertNotNull(sDAO.transaction2(tDTO));
+			
 			
 			
 //			assertNotNull(sDAO.dynamicChoose(3));
-			int[] empno= {7521,7566,7564,7698};
-			Map<String,Object> map = new HashMap<String, Object>();
-			map.put("empnoArr", empno);
-			
-			assertNotNull(sDAO.dynamicForEach(map));
+//			int[] empno= {7521,7566,7564,7698};
+//			Map<String,Object> map = new HashMap<String, Object>();
+//			map.put("empnoArr", empno);
+//			
+//			assertNotNull(sDAO.dynamicForEach(map));
 			
 //			assertNotNull(bDAO.selectBoardTotalCnt(rDTO));
 		//assertNotNull(sDAO.greaterThan(2000));
@@ -74,7 +85,7 @@ public class Test {
 //		System.out.println(cs.searchModel("현대"));
 //			assertNotNull(sDAO.subQueryNjoin());
 			//assertNotNull(sDAO.dollar("cp_emp5"));
-			//assertNotNull(sDAO.dynamicIf(0));
+			//assertNotNull(sDAO.dynamicIf(0));	
 			
 		}catch(Exception e) {
 			e.printStackTrace();

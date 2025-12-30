@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.apache.ibatis.exceptions.PersistenceException;
 
+import day1224.EmpDTO;
 import day1226.EmpAllDomain;
 
 public class SelectService4 {
@@ -55,17 +56,29 @@ public class SelectService4 {
 		return list;
 	}
 	
-	public int dynamicSet() throws PersistenceException {
+	public int dynamicSet(EmpDTO eDTO) throws PersistenceException {
 		int cnt = 0;
 		try {
-			
-			cnt = SelectDAO4.getInstance().dynamicSet();
+			cnt = SelectDAO4.getInstance().dynamicSet(eDTO);
 		}catch(PersistenceException pe) {
 			pe.printStackTrace();
 		}
 		
 		return cnt;
 	}
+	
+	public boolean transaction(TransactionDTO tDTO) throws PersistenceException {
+		int cnt = 0;
+		try {
+			cnt = SelectDAO4.getInstance().transaction(tDTO);
+		}catch(PersistenceException pe) {
+			pe.printStackTrace();
+		}
+		
+		return cnt==2;
+	}
+	
+	
 	
 	
 }

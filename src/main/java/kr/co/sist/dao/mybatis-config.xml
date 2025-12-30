@@ -13,6 +13,7 @@
 		<typeAlias type="day1226.EmpAllDomain" alias="eaDomain"/>		
 		<!-- 제조사, 모델명, 연식, 가격, 옵션, 배기량,이미지,입력일을 저장할 domain -->
 		<typeAlias type="day1226.CarModelDomain" alias="cmoDomain"/>	
+		<typeAlias type="day1230.TransactionDTO" alias="transactionDTO"/>	
 		<!-- 검색에 사용할 Domain -->
 		<typeAlias type="kr.co.sist.board.BoardDomain" alias="boardDomain"/>
 		<!-- 추가나 변경에 사용할 DTO -->	
