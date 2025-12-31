@@ -21,6 +21,7 @@
 		<typeAlias type="kr.co.sist.board.RangeDTO" alias="rangeDTO"/>	
 		<typeAlias type="kr.co.sist.car.CarDTO" alias="carDTO"/>	
 		<typeAlias type="kr.co.sist.car.ViewDomain" alias="viewDomain"/>	
+		<typeAlias type="day1231.MemberDTO" alias="memberDTO"/>
 			
 	</typeAliases>
   	<environments default="development">
@@ -42,6 +43,7 @@
     <mapper resource="day1226/examMapper4.xml"/> <!-- select 연습 -->
     <mapper resource="day1229/examMapper5.xml"/> <!-- select 연습 -->
     <mapper resource="day1230/examMapper6.xml"/> <!-- select 연습 -->
+    <mapper resource="day1231/examMapper7.xml"/><!-- select 연습 -->
     <mapper resource="kr/co/sist/car/carMapper.xml"/> <!-- select 연습 -->
     <mapper resource="kr/co/sist/board/boardMapper.xml"/>       
   </mappers>

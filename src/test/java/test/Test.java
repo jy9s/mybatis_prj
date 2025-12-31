@@ -1,12 +1,19 @@
 package test;
 
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.junit.jupiter.api.DisplayName;
 
 import day1224.EmpDTO;
 import day1230.SelectDAO4;
 import day1230.TransactionDTO;
+import day1231.MemberDTO;
+import day1231.SelectDAO5;
 
 public class Test {
 
@@ -46,7 +53,7 @@ public class Test {
 		
 		//BoardDAO bDAO = BoardDAO.getInstance();
 		
-		SelectDAO4 sDAO = SelectDAO4.getInstance();
+//		SelectDAO4 sDAO = SelectDAO4.getInstance();
 		try {
 //			assertNotNull(bDAO.selectBoardTotalCnt(new RangeDTO()));
 			//RangeDTO rDTO = new RangeDTO();
@@ -59,16 +66,33 @@ public class Test {
 //			e.setSal(1300);
 //			e.setJob("영업");
 			
-			TransactionDTO tDTO = new TransactionDTO();
+//			TransactionDTO tDTO = new TransactionDTO();
 			//tDTO.setName("박제이");
 			//tDTO.setAddress("서울시 동작구 상도동");
-			tDTO.setName("민병");
-			tDTO.setAddress("서울시 동");
+//			tDTO.setName("민병");
+//			tDTO.setAddress("서울시 동");
+			SelectDAO5 sd5 = SelectDAO5.getInstance();
+//			assertNotNull(sDAO.transaction2(tDTO));
+//			MemberDTO mDTO=new MemberDTO();
+//			mDTO.setNum(43);
+//			mDTO.setTel("010-1234-3333");
+//			mDTO.setAge(20);
 			
-			assertNotNull(sDAO.transaction2(tDTO));
+			//sd5.updateMember(mDTO);
+//			sd5.deleteMember(mDTO);
+//			int cnt=mDTO.getCnt();
+//			assertSame(cnt, 1);
 			
+			HashMap<String,Object> map = new HashMap<String, Object>();
 			
+			sd5.selectAllMember(map);
 			
+			List<Map<String,Object>> data = (List<Map<String,Object>>)map.get("searchAllMember");
+			
+			System.out.println(data);
+//			System.out.println(data.get(0).get("NAME"));
+			assertNotNull(data);
+				
 //			assertNotNull(sDAO.dynamicChoose(3));
 //			int[] empno= {7521,7566,7564,7698};
 //			Map<String,Object> map = new HashMap<String, Object>();
